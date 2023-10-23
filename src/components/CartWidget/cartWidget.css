@@ -1,0 +1,9 @@
+.cartClass {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    gap: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
