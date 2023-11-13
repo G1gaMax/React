@@ -1,0 +1,19 @@
+.detailContainer{
+    display: flex;
+    margin: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Card-detail{
+    width: 500px;
+    height: 550px ;
+    border: 0.5px solid rgb(223, 221, 221);
+    border-radius: 8px;
+    text-align: center;
+    font-size: small;
+    padding: 8px;
+    position: relative;
+    
+}

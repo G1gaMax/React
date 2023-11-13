@@ -1,0 +1,43 @@
+.Card {
+    width: 200px;
+    height: 450px  !important ;
+    border: 0.5px solid rgb(223, 221, 221);
+    border-radius: 8px;
+    text-align: center;
+    font-size: small;
+    padding: 8px;
+    position: relative;  
+}
+
+.Card:hover{
+    border: 4px solid rgb(223, 221, 221);
+}
+.card-text{
+    text-decoration: none;
+    color: black;
+}
+
+.Card h5{
+    font-size: medium;
+}
+
+.Card p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+.card-image{
+    width: 100% ;
+    height: 250px ;
+    padding: 10px;
+    object-fit: contain;
+}
+
+.buttons{
+    margin: 10px;
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    
+}
+
