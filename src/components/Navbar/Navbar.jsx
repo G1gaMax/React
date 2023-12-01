@@ -39,7 +39,7 @@ function NavBar() {
 
           </Nav>
           <Nav.Item className="ms-auto">
-            <Nav.Link><CartWidget /></Nav.Link>
+            <CartWidget />
           </Nav.Item>
         </Navbar.Collapse>
       </Container>

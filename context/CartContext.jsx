@@ -32,12 +32,13 @@ export const CartProvider = ({children}) => {
   }
 
   //Function to remote cart items
-  const removeItem = ( ) => {
-
+  const removeItem = ( id ) => {
+    const filterCart = cart.filter( (item) => item.producto.id !== id)
+    setCart(filterCart);
   }
 
   const clearCart =  ( ) => {
-
+    setCart([]);
   }
 
 

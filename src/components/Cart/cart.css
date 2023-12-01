@@ -1,0 +1,10 @@
+.listContainerCart{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+    list-style-type: none;
+}
