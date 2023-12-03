@@ -1,7 +1,10 @@
 import React, { useState, useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
+import '../ItemDetail/itemDetail.css'
 import { CartContext } from '../../../context/CartContext'
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const ItemDetail = ({ producto }) => {
 
@@ -15,18 +18,34 @@ const ItemDetail = ({ producto }) => {
     }
     
     return (
-        <div>
+        <div className='itemDetail-Card'>
+
+        <div className="itemDetail-card-image">
             <img className='card-image' src={producto.image} alt={producto.title} />
+        </div>
+
+        <div className="itemDetail-card-title">
             <h5>{producto.title}</h5>
-            <p>{producto.description}</p>
+        </div>
+
+        <div className="itemDetail-card-description">
+          <p>{producto.description}</p>
+        </div>
+
+        <div className="itemDetail-card-price">
             <h5>{`$${producto.price}`} </h5>
+            <p>{`Stock: ${producto.rating.count}`} </p>
+        </div>
             {quantity == 0 ?
             <ItemCount initial={1} stock={producto.rating.count} onAdd={onAdd} />
             :
-            <Link to={"/Cart"}>Go to cart</Link>
+            <div>
+            <Link to={"/Cart"}>  <Button variant="primary">Go to cart</Button>{' '}  </Link>
+            <Link to={"/products"}>   <Button variant="primary">Keep shopping</Button>{' '} </Link>
+            </div>
             }
 
-            <p>{`Stock: ${producto.rating.count}`} </p>
+            
         </div>
     )
 }

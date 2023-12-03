@@ -1,22 +1,37 @@
 import React, { createContext, useState } from 'react';
 export const CartContext = createContext();
 
+
 export const CartProvider = ({children}) => {
 
   const [cart, setCart] = useState([]);
+  const [total,setTotal] = useState(0) //valor en guita
+  const [quantityTotal,setQuantityTotal] = useState(0) //cantidad de items total
 
 
-  //Function to add productos to cart
-  const addToCart = (producto, quantity ) =>{
-    if(!isInCart(producto.id)){
-      setCart((prev) => [...prev, {producto, quantity}])
+
+  const addToCart = (producto, quantity) => {
+    const productExist = cart.find(prod => prod.producto.id === producto.id);
+
+    if (!productExist) {
+        setCart(prev => [...prev, { producto, quantity }]);
+        setQuantityTotal(prev => prev + quantity);
+        setTotal(prev => prev + producto.precio * quantity);
+    } else {
+        const updatedCart = cart.map(prod => {
+            if (prod.producto.id === producto.id) {
+                return { ...prod, quantity: prod.quantity + quantity };
+            } else {
+                return prod;
+            }
+        });
+
+        setCart(updatedCart);
+        setQuantityTotal(prev => prev + quantity);
+        setTotal(prev => prev + producto.price * quantity);
     }
-    else
-    {
-      console.log("Already on cart...")
-    }
+};
 
-  }
 
   //Function to check if a product is already on cart
   const isInCart = ( itemId ) => {
@@ -39,6 +54,8 @@ export const CartProvider = ({children}) => {
 
   const clearCart =  ( ) => {
     setCart([]);
+    setCantidadTotal(0);
+    setTotal(0);
   }
 
 
@@ -55,6 +72,9 @@ export const CartProvider = ({children}) => {
                 getTotalItems,
                 removeItem,
                 clearCart,
+                total,
+                quantityTotal,
+
 
             }
         }>

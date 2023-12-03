@@ -15,19 +15,24 @@ const Item = ({ product }) => {
     return (
         <Link to={`/item/${product.id}`} className='card-text'>
         <div className='Card'>
-            <img className='card-image' src={product.image} alt={product.title} />
-            <p>{`Stock: ${product.rating.count}`}</p>
+
+        <div className='card-image'>
             
-            <h5 >{product.title}</h5> 
+            <img src={product.image} alt={product.title} />
+        </div>
 
-            <div className='buttons'>
-
-                <p>$ {product.price}</p>
-
-                <></>
-
-                
+        <div className='card-stock'>
+        
+            <p>{`Stock: ${product.rating.count}`}</p>
             </div>
+        
+        <div className='card-title'>
+            <h5 >{product.title}</h5> 
+            </div>
+
+        <div className='card-price'>
+            <p>$ {product.price}</p>
+        </div>
         </div>
         </Link>
 
