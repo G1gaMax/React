@@ -8,7 +8,7 @@ const Home = () => {
             <Navbar />
             <div className='home'>
                 <h1>Welcome to ShopSmart!</h1>
-                <Link to={"/products"}>
+                <Link to={"/"}>
                 <img
                     src={mainLogo}
                     width="300"

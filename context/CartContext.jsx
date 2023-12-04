@@ -7,6 +7,7 @@ export const CartProvider = ({children}) => {
   const [cart, setCart] = useState([]);
   const [total,setTotal] = useState(0) //valor en guita
   const [quantityTotal,setQuantityTotal] = useState(0) //cantidad de items total
+  // const [itemQuantity, setItemQuantity] = useState(0)
 
 
 
@@ -16,7 +17,7 @@ export const CartProvider = ({children}) => {
     if (!productExist) {
         setCart(prev => [...prev, { producto, quantity }]);
         setQuantityTotal(prev => prev + quantity);
-        setTotal(prev => prev + producto.precio * quantity);
+        setTotal(prev => prev + producto.price * quantity);
     } else {
         const updatedCart = cart.map(prod => {
             if (prod.producto.id === producto.id) {
@@ -33,6 +34,14 @@ export const CartProvider = ({children}) => {
 };
 
 
+
+const itemQuantity = (productId) => {
+  const item = cart.find((product) => product.producto.id === productId);
+  return item ? item.quantity : 0;
+};
+
+
+
   //Function to check if a product is already on cart
   const isInCart = ( itemId ) => {
     return cart.some( (i) => i.producto.id === itemId)
@@ -47,14 +56,21 @@ export const CartProvider = ({children}) => {
   }
 
   //Function to remote cart items
-  const removeItem = ( id ) => {
-    const filterCart = cart.filter( (item) => item.producto.id !== id)
-    setCart(filterCart);
-  }
+  const removeItem = (id) => {
+    const removedItem = cart.find((item) => item.producto.id === id);
+  
+    if (removedItem) {
+      const filterCart = cart.filter((item) => item.producto.id !== id);
+      setCart(filterCart);
+  
+      setQuantityTotal((prev) => prev - removedItem.quantity);
+      setTotal((prev) => prev - removedItem.producto.price * removedItem.quantity);
+    }
+  };
 
   const clearCart =  ( ) => {
     setCart([]);
-    setCantidadTotal(0);
+    setQuantityTotal(0);
     setTotal(0);
   }
 
@@ -74,6 +90,7 @@ export const CartProvider = ({children}) => {
                 clearCart,
                 total,
                 quantityTotal,
+                itemQuantity,
 
 
             }

@@ -4,28 +4,31 @@ import './itemDetailContainer.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { useParams } from 'react-router-dom'
 import LoadingSpinner from '../Spinner/Spinner'
+import {getFirestore, doc, getDoc} from "firebase/firestore"
+
 
 const ItemDetailContainer = () => {
 
 
 
     const [product, setProduct] = useState(null);
-    const apiUrl = "https://fakestoreapi.com/products";
     const {productID} = useParams()
 
     useEffect(() => {
-        const fetchData = () => {
-            return fetch(apiUrl)
-                .then((response) => response.json())
-                .then((data) => {
-                    
-                    const foundProduct = data.find( (item) => item.id == productID)
-                    setProduct(foundProduct)
-                    
-                })
-                .catch((error) => console.log(error))
-        }
-        fetchData();
+
+        const db = getFirestore();
+
+        const newDoc = doc(db,"productos",productID)
+
+        getDoc(newDoc)
+        .then(res => {
+            const data =  res.data();
+            const newProduct = {id: doc.id,...data}
+            setProduct(newProduct)
+
+        })
+        .catch(error => console.log(error))
+      
     }, [productID]);
 
 

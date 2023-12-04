@@ -1,0 +1,19 @@
+.main-checkout-container{
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-checkout-container form{
+    width: 400px;
+    
+}
+
+
+.checkout-button-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

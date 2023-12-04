@@ -9,22 +9,30 @@ import Products from './pages/Products'
 import Home from './pages/Home'
 import Cart from './components/Cart/Cart'
 import { CartProvider } from '../context/CartContext'
+import {getFirestore, collection, getDocs} from "firebase/firestore"
+import { useEffect, useState } from 'react'
+import Checkout from './components/Checkout/Checkout'
+
 function App() {
+
+
 
 
   return (
     <>
+    
       <BrowserRouter>
         <CartProvider>
         <NavBar />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/products' element={<Products />} />
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/:categoryID' element={<ItemListContainer />} />
           <Route path='/item/:productID' element={<ItemDetailContainer />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/location' element={<Location />} />
           <Route path='/Cart' element={<Cart/>}/>
+          <Route path='/Checkout' element={<Checkout />}/>
 
         </Routes>
         </CartProvider>

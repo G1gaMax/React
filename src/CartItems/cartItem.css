@@ -59,6 +59,18 @@
 }
 
 
+.quantity-item{
+    display: flex;
+    padding: 5px;
+    width: 50px;
+    border: 0.5px solid rgb(223, 221, 221);
+    border-radius: 8px;
+    text-align: center;
+    justify-content: center;
+    align-items:center;
+}
+
+
 .remove-item:hover{
     color: red;
 }

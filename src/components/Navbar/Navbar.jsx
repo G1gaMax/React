@@ -12,7 +12,7 @@ function NavBar() {
 
     <Navbar bg="light" data-bs-theme="light">
       <Container >
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/home">
           <img
             src={mainLogo}
             width="30"
@@ -25,9 +25,9 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto" >
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/home">Home</Nav.Link>
             <NavDropdown title="Products" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/products">All products</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/">All products</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as={Link} to="/electronics">Electronics</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/jewelery">Jewelery</NavDropdown.Item>

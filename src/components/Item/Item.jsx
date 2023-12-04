@@ -23,7 +23,7 @@ const Item = ({ product }) => {
 
         <div className='card-stock'>
         
-            <p>{`Stock: ${product.rating.count}`}</p>
+            <p>{`Stock: ${product.stock}`}</p>
             </div>
         
         <div className='card-title'>

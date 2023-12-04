@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import '../ItemDetail/itemDetail.css'
 import { CartContext } from '../../../context/CartContext'
 import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 const ItemDetail = ({ producto }) => {
 
@@ -34,14 +33,14 @@ const ItemDetail = ({ producto }) => {
 
         <div className="itemDetail-card-price">
             <h5>{`$${producto.price}`} </h5>
-            <p>{`Stock: ${producto.rating.count}`} </p>
+            <p>{`Stock: ${producto.stock}`} </p>
         </div>
             {quantity == 0 ?
-            <ItemCount initial={1} stock={producto.rating.count} onAdd={onAdd} />
+            <ItemCount initial={1} stock={producto.stock} onAdd={onAdd} />
             :
             <div>
             <Link to={"/Cart"}>  <Button variant="primary">Go to cart</Button>{' '}  </Link>
-            <Link to={"/products"}>   <Button variant="primary">Keep shopping</Button>{' '} </Link>
+            <Link to={"/"}>   <Button variant="primary">Keep shopping</Button>{' '} </Link>
             </div>
             }
 

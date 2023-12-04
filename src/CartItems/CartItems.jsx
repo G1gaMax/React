@@ -6,7 +6,7 @@ import { CartContext } from '../../context/CartContext';
 
 const CartItem = ({ product }) => {
 
-    const {cart,removeItem, total, quantityTotal} = useContext(CartContext)    
+    const {cart,removeItem, total, quantityTotal, itemQuantity} = useContext(CartContext)    
 
 
     const onAdd = (quantity) => {
@@ -18,9 +18,15 @@ const CartItem = ({ product }) => {
 
         <div className='cartItemsContainer'>
 
+        <div className='quantity-item'> 
+        <p>{itemQuantity(product.id)}</p>
         
+        
+        </div>
 
         <div className='cartCard'>
+        
+        
         
         <img className='cartCard-image' src={product.image} alt={product.title} /> 
         

@@ -3,14 +3,14 @@ import { CartContext } from '../../../context/CartContext';
 import emptyCart from '../../assets/empty_cart.png';
 import CartItems from '../../CartItems/CartItems';
 import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
  import "./cart.css";
+import Checkout from '../Checkout/Checkout';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-    const {cart, clearCart, removeItem,quantityTotal, total} = useContext(CartContext)
-    console.log(cart)
+    const {cart, clearCart,quantityTotal, total} = useContext(CartContext)
     return (
         <div>
         <div className='mainContainer'>
@@ -20,9 +20,9 @@ const Cart = () => {
                 {
                     
                 cart.length > 0 ?
-                cart.map( (item) => {
-                    return <li>
-                        <CartItems product={item.producto}/>
+                cart.map( (item, key) => {
+                    return <li >
+                        <CartItems  product={item.producto}/>
                                            </li>
                 
                 }
@@ -51,11 +51,12 @@ const Cart = () => {
         </div>
 
         <div className='total-items'>
-        <p>Total: {total}</p>
+        <p>Total: ${total.toFixed(2)}</p>
         </div>
 
         <div className='cart-buttons'>
-        {cart.length > 0 &&  <Button variant="primary">Clear cart</Button> }
+        {cart.length > 0 &&  <Button onClick={clearCart} variant="primary">Clear cart</Button> }
+        {cart.length > 0 &&  <Link to="/checkout">  <Button variant="primary">Checkout</Button> </Link>}
         </div>
         
         </div>
