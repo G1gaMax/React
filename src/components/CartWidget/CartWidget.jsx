@@ -15,7 +15,7 @@ function CartWidget() {
         <GrCart />
 
         </Link>
-        <p className='cartClass'>{getTotalItems()}</p>
+        <p>{getTotalItems()}</p>
         
       </div>
   )

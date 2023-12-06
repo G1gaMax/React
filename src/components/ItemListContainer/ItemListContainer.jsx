@@ -4,9 +4,7 @@ import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import LoadingSpinner from "../Spinner/Spinner";
 import {getFirestore, collection, getDocs, query, where} from "firebase/firestore"
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Sometype+Mono&display=swap');
-</style>
+
 
 const ItemListContainer = () => {
 

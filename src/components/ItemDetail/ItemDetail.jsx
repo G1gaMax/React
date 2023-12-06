@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import '../ItemDetail/itemDetail.css'
 import { CartContext } from '../../../context/CartContext'
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 const ItemDetail = ({ producto }) => {
 

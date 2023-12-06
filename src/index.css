@@ -1,0 +1,24 @@
+:root {
+    --dark-pink: #EE6141;
+    --light-pink: #FFA475;
+    --cream: #F1EBDF;
+    --gray: #c0bdb9;
+    --white: #F8F8F8;
+    --black: #313131;
+    --headings: 'Lora', serif;
+    --body: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    
+    
+}
+
+
+body  {
+    background-color: #eee;
+    color: var(--black);
+    
+}
+

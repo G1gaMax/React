@@ -1,3 +1,4 @@
+
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -5,12 +6,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from "../CartWidget/CartWidget";
 import mainLogo from "./img/trolley.png"
 import { Link } from "react-router-dom";
+import "./navbar.css";
+
 
 function NavBar() {
 
   return (
 
-    <Navbar bg="light" data-bs-theme="light">
+    <Navbar  className="navbar" bg="light" data-bs-theme="light" >
       <Container >
         <Navbar.Brand as={Link} to="/home">
           <img
@@ -18,7 +21,7 @@ function NavBar() {
             width="30"
             height="30"
             className="d-inline-block align-top"
-            alt="React Bootstrap logo"
+            
           />{'    '}
           ShopSmart
         </Navbar.Brand>

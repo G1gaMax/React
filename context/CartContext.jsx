@@ -41,12 +41,16 @@ const itemQuantity = (productId) => {
 };
 
 
-
   //Function to check if a product is already on cart
   const isInCart = ( itemId ) => {
     return cart.some( (i) => i.producto.id === itemId)
 
   }
+
+  const calculateTotalPrice = (product) => {
+    const item = cart.find((cartItem) => cartItem.producto.id === product.id);
+    return item ? item.quantity * product.price : 0;
+  };
 
   //Function to get total items on cart
   const getTotalItems = () => {
@@ -55,7 +59,7 @@ const itemQuantity = (productId) => {
         return cant
   }
 
-  //Function to remote cart items
+  //Function to remove cart items
   const removeItem = (id) => {
     const removedItem = cart.find((item) => item.producto.id === id);
   
@@ -91,6 +95,7 @@ const itemQuantity = (productId) => {
                 total,
                 quantityTotal,
                 itemQuantity,
+                calculateTotalPrice,
 
 
             }
