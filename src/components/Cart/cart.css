@@ -1,56 +1,48 @@
-.listContainerCart{
-    display: flex;
-    width: 80%;
-    flex-direction: row;
-    margin: 20px;
-    justify-content: center;
+.listContainerCart {
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  margin: 20px;
+  justify-content: center;
 }
 
-
-.mainContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 
 ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    list-style: none;
-    width: 70%;
-    align-items: center;    
-    padding: 10px;
-  }
-
-
-.cartFooter{
-    display: flex;
-    flex-direction: column;
-    width: 90dvh;
-    align-self: center;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;    
-    padding: 10px;
-    
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  width: 70%;
+  align-items: center;
+  padding: 10px;
 }
-  .total-items{
-    display: flex;
-    width: 40%;
-    text-align: center;
-    justify-content: center;
-   
-  }
 
+.cartFooter {
+  display: flex;
+  flex-direction: column;
+  width: 90dvh;
+  align-self: center;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.total-items {
+  display: flex;
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+}
 
-
-
-  .cart-buttons{
-    display: flex;
-    justify-content: center;
-    width: 40%;
-    gap: 10px;
-  }
+.cart-buttons {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  gap: 10px;
+}

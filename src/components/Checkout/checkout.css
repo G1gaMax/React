@@ -1,27 +1,25 @@
-.main-checkout-container{
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.main-checkout-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.main-checkout-container form{
-    width: 400px;
-    
+.main-checkout-container form {
+  width: 400px;
 }
 
-
-.checkout-button-group{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px;
+.checkout-button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
 }
 
-.checkout-data{
-    display: flex;
-    flex-direction: column;
+.checkout-data {
+  display: flex;
+  flex-direction: column;
 }

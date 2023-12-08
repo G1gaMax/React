@@ -3,68 +3,54 @@ import "./itemListContainer.css";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import LoadingSpinner from "../Spinner/Spinner";
-import {getFirestore, collection, getDocs, query, where} from "firebase/firestore"
-
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 
 const ItemListContainer = () => {
-
-
-  const {categoryID} = useParams();
+  const { categoryID } = useParams();
   const [loading, setLoading] = useState(true);
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
 
-
-  useEffect( () => {
+  useEffect(() => {
     setLoading(true);
 
-    const db =  getFirestore()
-
+    const db = getFirestore();
 
     //Products filtering
     const myProducts = categoryID
-    ? query(collection(db,"productos"),where("category", "==",categoryID))
-    : collection(db,"productos")
+      ? query(collection(db, "productos"), where("category", "==", categoryID))
+      : collection(db, "productos");
 
-
-    
-    
     getDocs(myProducts)
-    .then((snapshot) => {
-      const newProducts = snapshot.docs.map( (doc) =>{
-        const data = doc.data()
-        return {id: doc.id,...data}
+      .then((snapshot) => {
+        const newProducts = snapshot.docs.map((doc) => {
+          const data = doc.data();
+          return { id: doc.id, ...data };
+        });
+        setProducts(newProducts);
       })
-      setProducts(newProducts);
-    })
-    .catch((error) => console.log(error))
-    .finally(()=> setLoading(false));
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
+  }, [categoryID]);
 
-  },[categoryID])
-    
-
-
-  
-  return (
-    loading ? 
-      <div className="main-container">
-      <div className="loading-container"> 
-        <LoadingSpinner /> 
-      </div> 
+  return loading ? (
+    <div className="main-container">
+      <div className="loading-container">
+        <LoadingSpinner />
       </div>
-      :   
-      <div className="main-container">
+    </div>
+  ) : (
+    <div className="main-container">
       <div className="listContainer">
         <ItemList products={products} />
       </div>
-      </div>
+    </div>
   );
-  }
-
+};
 
 export default ItemListContainer;
-
-
-
-
-
-

@@ -1,0 +1,85 @@
+.cartItemsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 90dvh;
+  gap: 2px;
+}
+
+.cartCard {
+  display: flex;
+  width: 100%;
+  height: 70px !important ;
+  border: 0.5px solid rgb(223, 221, 221);
+  text-align: center;
+  font-size: small;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.cartDescription {
+  width: 100%;
+}
+
+.cartDescription h5 {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+.cartPrice {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 20%;
+}
+
+.cartCard-image {
+  width: 20%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.remove-item {
+  display: flex;
+  padding: 5px;
+  border: 0.5px solid rgb(223, 221, 221);
+  border-radius: 0px 8px 8px 0px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.quantity-item {
+  display: flex;
+  padding: 5px;
+  width: 50px;
+  border: 0.5px solid rgb(223, 221, 221);
+  border-radius: 8px 0px 0px 8px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.remove-item:hover {
+  color: red;
+}
+
+.cart-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-quantity p {
+  font-size: 20px;
+  text-align: center;
+}
